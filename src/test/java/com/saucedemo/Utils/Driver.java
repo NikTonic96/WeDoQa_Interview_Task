@@ -45,12 +45,9 @@ public class Driver {
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
-
             }
         }
-
         return driverPool.get();
-
     }
 
     public static void closeDriver() {
@@ -59,6 +56,4 @@ public class Driver {
             driverPool.remove();
         }
     }
-
-
 }

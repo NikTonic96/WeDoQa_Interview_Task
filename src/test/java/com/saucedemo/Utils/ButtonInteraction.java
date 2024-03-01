@@ -2,14 +2,16 @@ package com.saucedemo.Utils;
 
 import org.openqa.selenium.WebElement;
 
+import static com.saucedemo.Utils.Conditions.waitUntilElementIsClickableBool;
+
 public class ButtonInteraction {
 
+    /**
+     * Clicks button by providing element
+     */
     public static void clickButton(WebElement elementBtn) {
-        if (elementBtn.isDisplayed()) {
-            elementBtn.click();
-            System.out.println("Button Clicked !");
-        } else {
-            System.out.println("Button did not click !!");
-        }
+        waitUntilElementIsClickableBool(elementBtn);
+        elementBtn.click();
+        System.out.println("Button Clicked !");
     }
 }

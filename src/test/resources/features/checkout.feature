@@ -1,3 +1,4 @@
+@checkout
 Feature: Checkout
 
   Background: For the scenarios in this feature file, user is expected to be logged in and has an item in the cart

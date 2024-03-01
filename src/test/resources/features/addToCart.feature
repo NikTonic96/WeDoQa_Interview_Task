@@ -14,7 +14,7 @@ Feature: Saucedemo add to cart
     And opens the cart
     Then the user should see the cart is correctly updated
 
-    Scenario: changing item amount in cart
+  Scenario: changing item amount in cart
     When the user adds an another item from the list to the cart
     And opens the cart
     And removes the first item from the cart

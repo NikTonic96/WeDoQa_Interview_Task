@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = "html:target/cucumber-report.html",
         features = "src/test/resources/features",
-        glue = "src/test/com/saucedemo/step_definitions",
+        glue = "com.saucedemo.step_definitions",
         dryRun = false,
-        tags = "@addToCart"
+        tags = "@e2e"
 )
 
 

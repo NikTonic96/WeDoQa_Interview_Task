@@ -12,6 +12,7 @@ public class CartPage {
     public CartPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+    LogInPage logInPage = new LogInPage();
 
     @FindBy(xpath = "//div[@class='inventory_item_price']")
     public List<WebElement> priceOfItem;
@@ -26,10 +27,10 @@ public class CartPage {
     public WebElement checkoutButton;
 
     @FindBy(id = "first-name")
-    public WebElement firstNameField;
+    public WebElement firstNameInput;
 
     @FindBy(id = "last-name")
-    public WebElement lastNameField;
+    public WebElement lastNameInput;
 
     @FindBy(id = "postal-code")
     public WebElement postalCodeField;
@@ -49,4 +50,35 @@ public class CartPage {
     @FindBy(xpath = "//div[@class='complete-text']")
     public WebElement orderDispatchInfo;
 
+    public void completeOrder(String firsName, String surname, String postCode) {
+        firstNameField(firsName);
+        lastNameField(surname);
+        postCodeField(postCode);
+        clickSubmitOrder();
+    }
+
+    private void firstNameField(String name) {
+        logInPage.waitUntilElementIsClickable(firstNameInput, 1000);
+        firstNameInput.sendKeys(name);
+    }
+
+    /**
+     * Fill in password
+     */
+    private void lastNameField(String surname) {
+        logInPage.waitUntilElementIsClickable(lastNameInput, 1000);
+        lastNameInput.sendKeys(surname);
+    }
+    private void postCodeField(String postCode) {
+        logInPage.waitUntilElementIsClickable(postalCodeField, 1000);
+        postalCodeField.sendKeys(postCode);
+    }
+
+    /**
+     * Click on login submit button
+     */
+    private void clickSubmitOrder() {
+        logInPage.waitUntilElementIsClickable(continueButton);
+        continueButton.click();
+    }
 }

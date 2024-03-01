@@ -10,7 +10,7 @@ import static com.saucedemo.Utils.ButtonInteraction.clickButton;
 import static com.saucedemo.Utils.JavaFakerActions.*;
 import static com.saucedemo.Utils.SelectItemAction.randomClickOneElementByText;
 
-public class CheckoutStepDefinitions extends CartPage {
+public class Checkout_StepDefinitions extends CartPage {
 
     @When("the user adds an item from the list to the cart")
     public void theUserAddsAnItemFromTheListToTheCart() {
@@ -24,10 +24,7 @@ public class CheckoutStepDefinitions extends CartPage {
 
     @And("completes the checkout form")
     public void completesTheCheckoutForm() {
-        firstNameField.sendKeys(generateRandomName());
-        lastNameField.sendKeys(generateRandomSurname());
-        postalCodeField.sendKeys(generateRandomPostalCode());
-        clickButton(continueButton);
+        completeOrder(generateRandomName(), generateRandomSurname(), generateRandomPostalCode());
     }
 
     @And("completes the order")

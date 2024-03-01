@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class WebElementActions {
 
+    /**
+     * Gets text from element
+     */
     public static List<String> getTextFromElements(List<WebElement> elements) {
         List<String> texts = new ArrayList<>();
         for (WebElement element : elements) {
@@ -16,5 +18,4 @@ public class WebElementActions {
         }
         return texts;
     }
-
 }
